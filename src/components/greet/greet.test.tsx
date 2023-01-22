@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { Greet } from "./Greet"
+import { Greet } from "./greet"
 
 describe("Greet", () => {
   test("renders correctly", () => {
@@ -10,7 +10,7 @@ describe("Greet", () => {
 })
 
 describe("Nested", () => {
-  test("renders with a name", () => {
+  test("render with a name", () => {
     render(<Greet name="Rishabh" />)
     const textElement = screen.getByText("Hello Rishabh")
     expect(textElement).toBeInTheDocument()
