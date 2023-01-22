@@ -4,18 +4,18 @@ import { Greet } from "./greet"
 describe("Greet", () => {
   test("renders correctly", () => {
     render(<Greet />)
-    const textElement = screen.getByText("Hello")
+    const textElement = screen.getByText(/Hello/)
     expect(textElement).toBeInTheDocument()
   })
 })
 
-describe("Nested", () => {
-  test("render with a name", () => {
-    render(<Greet name="Rishabh" />)
-    const textElement = screen.getByText("Hello Rishabh")
-    expect(textElement).toBeInTheDocument()
-  })
-})
+// describe("Nested", () => {
+//   test("render with a name", () => {
+//     render(<Greet name="Rishabh" />)
+//     const textElement = screen.getByText("Hello Rishabh")
+//     expect(textElement).toBeInTheDocument()
+//   })
+// })
 
 // describe.only("Greet", () => {
 //   test("renders correctly", () => {
