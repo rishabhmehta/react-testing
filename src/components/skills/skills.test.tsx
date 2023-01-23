@@ -30,4 +30,29 @@ describe("Skills", () => {
     })
     expect(startLearningButton).not.toBeInTheDocument()
   })
+
+  /*
+  THIS WON'T WORK BECAUSE BUTTON IS NOT CURRENTLY PRESENT IN THE DOCUMENT
+  test("Start learning button is eventually displayed", () => {
+    render(<Skills skills={skills} />)
+    const startLearningButton = screen.getByRole("button", {
+      name: "Start Learning",
+    })
+    expect(startLearningButton).toBeInTheDocument()
+
+  */
+
+  test("Start learning button is eventually displayed", async () => {
+    render(<Skills skills={skills} />)
+    const startLearningButton = await screen.findByRole(
+      "button",
+      {
+        name: "Start Learning",
+      },
+      {
+        timeout: 2000,
+      }
+    )
+    expect(startLearningButton).toBeInTheDocument()
+  })
 })
