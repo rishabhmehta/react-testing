@@ -1,7 +1,7 @@
-import { render, screen } from "../../test-utils"
-import { MuiMode } from "./mui-mode"
+import { render, screen } from '../../test-utils'
+import { MuiMode } from './mui-mode'
 
-describe("MuiMode", () => {
+describe('MuiMode', () => {
   /* 
   GOOD FOR ONE OFF SCENARIOS
   test("renders text correctly", () => {
@@ -13,9 +13,9 @@ describe("MuiMode", () => {
   })
   */
 
-  test("renders text correctly", () => {
+  test('renders text correctly', () => {
     render(<MuiMode />)
-    const headingElement = screen.getByRole("heading")
-    expect(headingElement).toHaveTextContent("dark mode")
+    const headingElement = screen.getByRole('heading')
+    expect(headingElement).toHaveTextContent('dark mode')
   })
 })

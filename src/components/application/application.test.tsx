@@ -1,64 +1,65 @@
-import { render, screen } from "@testing-library/react"
-import { Application } from "./application"
+import { render, screen } from '@testing-library/react'
+import { Application } from './application'
 
-describe("application", () => {
-  test("renders correctly", () => {
+describe('application', () => {
+  test('renders correctly', () => {
     render(<Application />)
-    const pageHeading = screen.getByRole("heading", {
+
+    const pageHeading = screen.getByRole('heading', {
       level: 1,
     })
     expect(pageHeading).toBeInTheDocument()
 
-    const sectionHeading = screen.getByRole("heading", {
+    const sectionHeading = screen.getByRole('heading', {
       level: 2,
     })
     expect(sectionHeading).toBeInTheDocument()
 
-    const paragraphElement = screen.getByText("All fields are mandatory")
+    const paragraphElement = screen.getByText('All fields are mandatory')
     expect(paragraphElement).toBeInTheDocument()
 
-    const closeElement = screen.getByTitle("close")
+    const closeElement = screen.getByTitle('close')
     expect(closeElement).toBeInTheDocument()
 
-    const imageElement = screen.getByAltText("a person with a laptop")
+    const imageElement = screen.getByAltText('a person with a laptop')
     expect(imageElement).toBeInTheDocument()
 
-    const customElement = screen.getByTestId("custom-element")
+    const customElement = screen.getByTestId('custom-element')
     expect(customElement).toBeInTheDocument()
 
-    const nameElement = screen.getByRole("textbox", {
-      name: "Name",
+    const nameElement = screen.getByRole('textbox', {
+      name: 'Name',
     })
     expect(nameElement).toBeInTheDocument()
 
-    const nameElement2 = screen.getByLabelText("Name", {
-      selector: "input",
+    const nameElement2 = screen.getByLabelText('Name', {
+      selector: 'input',
     })
     expect(nameElement2).toBeInTheDocument()
 
-    const nameElement3 = screen.getByPlaceholderText("Fullname")
+    const nameElement3 = screen.getByPlaceholderText('Fullname')
     expect(nameElement3).toBeInTheDocument()
 
-    const nameElement4 = screen.getByDisplayValue("Rishabh")
+    const nameElement4 = screen.getByDisplayValue('Rishabh')
     expect(nameElement4).toBeInTheDocument()
 
-    const bioElement = screen.getByRole("textbox", {
-      name: "Bio",
+    const bioElement = screen.getByRole('textbox', {
+      name: 'Bio',
     })
     expect(bioElement).toBeInTheDocument()
 
-    const jobLocationElement = screen.getByRole("combobox")
+    const jobLocationElement = screen.getByRole('combobox')
     expect(jobLocationElement).toBeInTheDocument()
 
-    const termsElement = screen.getByRole("checkbox")
+    const termsElement = screen.getByRole('checkbox')
     expect(termsElement).toBeInTheDocument()
 
     const termsElement2 = screen.getByLabelText(
-      "I agree to the terms and conditions"
+      'I agree to the terms and conditions'
     )
     expect(termsElement2).toBeInTheDocument()
 
-    const submitButtonElement = screen.getByRole("button")
+    const submitButtonElement = screen.getByRole('button')
     expect(submitButtonElement).toBeInTheDocument()
     expect(submitButtonElement).toBeDisabled()
   })
